@@ -85,16 +85,20 @@ body{
     top: 0.9em;
 }
 
+.social-media.disappear{
+    display: none; 
+}
+
 .social-media{
-    display: none;
     position: absolute;
-    /* display: flex; */
+    display: flex;
     align-items: center;
     background-color: hsl(217, 19%, 35%);
     color: white;
     width: 100%;
     height: 120%;
     padding: 1.5em;
+    transition: .3s;
     }
 
 .social-media p{
@@ -120,11 +124,14 @@ body{
         grid-template-areas:
             "image info"
             "image profile";
+        overflow: initial;
     }
 
     .main__wrapper{
         grid-area: image;
-        height: 100%;
+        height: auto;
+        overflow: hidden;
+        border-radius: 0 0 0 0.5rem
     }
 
     .main__wrapper img{
@@ -138,10 +145,23 @@ body{
 
     .profile{
         grid-area: profile;
+        margin-bottom: 1rem;
     }
+
+    .social-media{
+        width: 70%;
+        top: -140%;
+        left: 45%;
+        border-radius: 1rem;
+        justify-content: space-around 
+    }
+
 }
 
 @media screen and (min-width: 768px){
+    .main__wrapper{
+        height: 97.5%
+    }
     .profile{
         margin-bottom: 1.5rem;
         padding: 0 2.5rem;
@@ -161,6 +181,9 @@ body{
 }
 
 @media screen and (min-width: 1024px){
+    .main__wrapper{
+        height: 100%
+    }
     .profile__photo{
         display: flex;
         align-items: center
@@ -172,6 +195,11 @@ body{
 
     .profile__share{
         top: 1em
+    }
+
+    .social-media{
+        width: 50%;
+        left: 60%
     }
 }
 
@@ -210,4 +238,11 @@ body{
     }
 
     
+}
+
+@media screen and (min-width: 1440px){
+    .social-media{
+        width: 40%;
+        left: 70%
+    }
 }
