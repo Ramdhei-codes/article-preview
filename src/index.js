@@ -1,6 +1,8 @@
 const shareButton = document.querySelector(".profile__share")
 const socialMedia = document.querySelector(".social-media")
 
+socialMedia.classList.add('disappear')
+
 shareButton.addEventListener('click', hideShow)
 
 function hideShow() {
